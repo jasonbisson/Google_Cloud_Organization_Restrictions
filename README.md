@@ -15,8 +15,6 @@ No resources will be created, but access to the following will be required.
 - [Configure Organization Restrictions](https://cloud.google.com/resource-manager/docs/organization-restrictions/configure-organization-restrictions)
 
 ## Usage
-
-## Usage
 1. Clone repo
 ```
 git clone https://github.com/jasonbisson/google_organization_restrictions.git
