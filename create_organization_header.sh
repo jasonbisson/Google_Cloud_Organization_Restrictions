@@ -28,8 +28,8 @@ function check_empty_variables() {
 
   for variable in "${variables[@]}"; do
     if [ -z "${!variable}" ]; then
-      printf "ERROR: Required variable $variable is either empty or unset.\n\n"
-      printf "Update required vairable $variable with a value and run script again. \n\n"
+      echo "ERROR: Required variable $variable is either empty or unset.\n\n"
+      echo "Update required vairable $variable with a value and run script again. \n\n"
       exit
     fi
   done
@@ -47,18 +47,18 @@ function check_exit() {
 
 
 function create_strict_org_header() {
-cat <<EOF >$HOME/authorized_organization.json.template
+cat <<EOF >"$HOME"/authorized_organization.json.template
 {
 "resources": ["organizations/ORG_ID"],
  "options": "strict"
 }
 EOF
 check_exit
-cp $HOME/authorized_organization.json.template $HOME/$AUTH_ORG_FILE
+cp "$HOME"/authorized_organization.json.template "$HOME"/$AUTH_ORG_FILE
 check_exit
-sed -i '' "s/ORG_ID/${ORG_ID}/" $HOME/$AUTH_ORG_FILE
+sed -i '' "s/ORG_ID/${ORG_ID}/" "$HOME"/$AUTH_ORG_FILE
 check_exit
-BASE64_ORG_HEADER=`cat $HOME/$AUTH_ORG_FILE | base64`
+BASE64_ORG_HEADER=`cat "$HOME"/$AUTH_ORG_FILE | base64`
 check_exit
 echo "BASE64 HEADER for curl command: $BASE64_ORG_HEADER"
 echo ""
