@@ -1,5 +1,3 @@
-# google_organization_restrictions
-
 This repository will demostrate Google Cloud organization restriction capability which prevents accessing Google Cloud resources outside of an organizations organization boundary. The audience for this repository is the Egress proxy team who will be responsible for adding the authorized header to egress proxy configuration.
 
 No resources will be created, but access to the following will be required.
