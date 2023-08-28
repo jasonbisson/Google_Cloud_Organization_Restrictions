@@ -37,8 +37,8 @@ create_organization_header.sh --project_id <Google Cloud Project ID >
 
 The account used will require the following roles:
 
-- Organization Viewer (Permission resourcemanager.organizations.get)
-- Logs Viewer (Only for project )
+- Organization Viewer (role with only this permission resourcemanager.organizations.get)
+- Logs Viewer (Only for project id passed in argument )
 
 
 ### APIs
@@ -56,4 +56,3 @@ information on contributing to this module.
 ## Security Disclosures
 
 Please see our [security disclosure process](./SECURITY.md).
-# google_organization_restrictions
